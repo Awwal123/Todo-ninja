@@ -1,5 +1,5 @@
 <template>
-  <nav>Hi</nav>
+  <nav>Nav</nav>
 </template>
 <script>
 export default {
