@@ -4,6 +4,7 @@ import 'vuetify/styles'
 
 // Vuetify
 import { createVuetify } from 'vuetify'
+import { mdi } from 'vuetify/iconsets/mdi' 
 
 const myCustomTheme = {
   dark: false, // Set to `true` for dark mode
@@ -17,6 +18,14 @@ const myCustomTheme = {
 }
 
 export default createVuetify({
+  // icons: {
+  //   defaultSet: 'mdi', // Use Material Design Icons
+  // },
+  icons: {
+    defaultSet: 'mdi',
+    sets: { mdi } // ✅ Add MDI set explicitly
+  },
+  
   theme: {
     defaultTheme: 'customTheme', // Set this as the default theme
     themes: {
