@@ -2,7 +2,12 @@
   <div class="dashboard">
     <h1 class="text-grey text-h6">Dashboard</h1>
     <v-container class="my-5">
-      <v-card v-for="(project, index) in projects" :key="index" flat class="pa-3 mb-1">
+      <v-card
+        v-for="(project, index) in projects"
+        :key="index"
+        flat
+        class="pa-3 mb-1"
+      >
         <v-row :class="`pa-3 project ${project.status}`">
           <v-col cols="12" md="6">
             <div class="caption text-grey">Project Title</div>
@@ -17,8 +22,14 @@
             <div>{{ project.due }}</div>
           </v-col>
           <v-col cols="12" sm="4" md="2">
-            <div class="caption text-grey">Status</div>
-            <div>{{ project.status }}</div>
+            <div class="right">
+              <v-chip
+                size="small"
+                :class="`my-2 caption text-white ${project.status}`"
+              >
+                {{ project.status }}
+              </v-chip>
+            </div>
           </v-col>
         </v-row>
       </v-card>
@@ -31,11 +42,41 @@ export default {
   data() {
     return {
       projects: [
-        { title: "Design a new website", person: "The Net Ninja", due: "1st Jan 2026", status: "Ongoing" },
-        { title: "Develop a mobile app", person: "Jane Doe", due: "15th Feb 2026", status: "Completed" },
-        { title: "Upgrade backend API", person: "John Smith", due: "10th Mar 2026", status: "Overdue" },
-        { title: "Create marketing plan", person: "Alice Brown", due: "20th Apr 2026", status: "Completed" },
-        // { title: "Fix UI bugs", person: "Bob Williams", due: "5th May 2026", status: "Ongoing" }
+      {
+          title: "Design a new website",
+          person: "The Net Ninja",
+          due: "1st Jan 2026",
+          status: "Ongoing",
+          content: "Creating a modern, responsive website with Vue 3 and Vuetify."
+        },
+        {
+          title: "Develop a mobile app",
+          person: "Jane Doe",
+          due: "15th Feb 2026",
+          status: "Completed",
+          content: "Building a cross-platform mobile app using React Native."
+        },
+        {
+          title: "Upgrade backend API",
+          person: "John Smith",
+          due: "10th Mar 2026",
+          status: "Overdue",
+          content: "Migrating API from Node.js to a more scalable solution."
+        },
+        {
+          title: "Create marketing plan",
+          person: "Alice Brown",
+          due: "20th Apr 2026",
+          status: "Completed",
+          content: "Developing a strategic marketing plan for product launch."
+        },
+        {
+          title: "Fix UI bugs",
+          person: "Bob Williams",
+          due: "5th May 2026",
+          status: "Ongoing",
+          content: "Resolving UI issues and improving UX design."
+        }
       ]
     };
   }
@@ -51,5 +92,15 @@ export default {
 }
 .project.Overdue {
   border-left: 4px solid tomato;
+}
+.v-chip.Completed {
+  background-color:  #3cd1c2;
+
+}
+.v-chip.Ongoing {
+  background-color:  #ffaa2c;
+}
+.v-chip.Overdue {
+  background-color:  #f83e70;
 }
 </style>
