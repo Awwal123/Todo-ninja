@@ -86,28 +86,28 @@ export default {
         },
         {
           title: "Develop a mobile app",
-          person: "Jane Doe",
+          person: "Ryu",
           due: "15th Feb 2026",
           status: "Completed",
           content: "Building a cross-platform mobile app using React Native."
         },
         {
           title: "Upgrade backend API",
-          person: "John Smith",
+          person: "Chun Li",
           due: "10th Mar 2026",
           status: "Overdue",
           content: "Migrating API from Node.js to a more scalable solution."
         },
         {
           title: "Create marketing plan",
-          person: "Alice Brown",
+          person: "Yoshi",
           due: "20th Apr 2026",
           status: "Completed",
           content: "Developing a strategic marketing plan for product launch."
         },
         {
           title: "Fix UI bugs",
-          person: "Bob Williams",
+          person: "Gouken",
           due: "5th May 2026",
           status: "Ongoing",
           content: "Resolving UI issues and improving UX design."

@@ -22,6 +22,7 @@
           :key="link.text"
           :to="link.route"
           link
+          extract
           router
           :prepend-icon="link.icon"
          
