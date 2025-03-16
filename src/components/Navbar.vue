@@ -16,6 +16,13 @@
       </v-btn>
     </v-toolbar>
     <v-navigation-drawer app v-model="drawer" temporary color="primary">
+      <div class="d-flex flex-column align-center mt-5">
+        <v-avatar size="100">
+          <img src="/avatar-1.png" alt="Avatar" />
+        </v-avatar>
+        <p class="text-white subheading mt-1">The Net Ninja</p>
+      </div>
+
       <v-list>
         <v-list-item
           v-for="link in links"
@@ -25,7 +32,6 @@
           extract
           router
           :prepend-icon="link.icon"
-         
         >
           <v-list-item-title>{{ link.text }}</v-list-item-title>
         </v-list-item>
