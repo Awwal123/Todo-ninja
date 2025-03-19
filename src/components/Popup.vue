@@ -19,7 +19,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn variant="text" @click="dialog = false">Cancel</v-btn>
-          <v-btn color="success" @click="saveProject">Save</v-btn>
+          <v-btn color="text-white" class="bg-success" @click="saveProject">Save</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
