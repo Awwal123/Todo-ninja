@@ -29,7 +29,7 @@
   export default {
     data() {
       return {
-        dialog: false, // This was missing
+        dialog: false, 
         projectTitle: "",
         projectDescription: "",
       };
