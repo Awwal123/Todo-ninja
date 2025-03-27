@@ -36,19 +36,18 @@
           offset-y
           min-width="auto"
         >
-          <template v-slot:activator="{ on, attrs }">
+          <template v-slot:activator="{ props }">
             <v-text-field
               v-model="projectDueDate"
               label="Select Due Date"
               prepend-icon="mdi-calendar"
               readonly
-              v-bind="attrs"
-              v-on="on"
+              v-bind="props"
             ></v-text-field>
           </template>
           <v-date-picker
             v-model="projectDueDate"
-            @update:model-value="dateMenu = false"
+            @update:modelValue="dateMenu = false"
           ></v-date-picker>
         </v-menu>
       </v-card-text>
@@ -71,7 +70,7 @@ export default {
       dialog: false,
       projectTitle: "",
       projectDescription: "",
-      projectDueDate: "",
+      projectDueDate: null,
       dateMenu: false, // Ensures the menu opens and closes correctly
     };
   },
