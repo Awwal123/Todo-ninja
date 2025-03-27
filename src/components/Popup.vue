@@ -111,10 +111,9 @@ export default {
           title: this.projectTitle,
           description: this.projectDescription,
           dueDate: this.projectDueDate,
-        });
-        this.dialog = false; // Only close if validation passes
-        // Inside saveProject() method in Popup.vue
-this.$emit("project-added"); // Emit event to trigger snackbar
+        });git
+        this.dialog = false;
+this.$emit("project-added");
 
       } else {
         console.log("Form validation failed! Please complete all fields.");
