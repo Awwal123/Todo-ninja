@@ -111,7 +111,7 @@ export default {
           title: this.projectTitle,
           description: this.projectDescription,
           dueDate: this.projectDueDate,
-        });git
+        });
         this.dialog = false;
 this.$emit("project-added");
 
