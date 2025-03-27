@@ -12,7 +12,7 @@
       <v-spacer></v-spacer>
 
       <v-menu>
-        <template v-slot:activator="{props}">
+        <template v-slot:activator="{ props }">
           <v-btn v-bind="props" flat color="grey">
             <v-icon left class="mx-2">mdi-menu-down</v-icon>
             <span>Menu</span>
@@ -36,6 +36,7 @@
         <v-icon right class="ml-2">mdi-exit-to-app</v-icon>
       </v-btn>
     </v-toolbar>
+
     <v-navigation-drawer app v-model="drawer" temporary color="primary">
       <div class="d-flex flex-column align-center mt-5">
         <v-avatar size="100">
@@ -43,7 +44,7 @@
         </v-avatar>
         <p class="text-white subheading mt-1">The Net Ninja</p>
         <div class="my-6">
-          <Popup />
+          <Popup @project-added="showSnackbar" />
         </div>
       </div>
 
@@ -61,23 +62,35 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
+    <!-- Snackbar -->
+    <v-snackbar v-model="snackbar" timeout="3000" color="green" location="top">
+      <span class="text-white">Project has been added successfully</span>
+    </v-snackbar>
   </nav>
 </template>
+
 <script>
 import Popup from './Popup.vue';
+
 export default {
-  components: {Popup},
+  components: { Popup },
   data() {
     return {
       drawer: false,
-
+      snackbar: false,
       links: [
-        {icon: "mdi-home", text:  "Dashboard", route: "/" },
-        {icon: "mdi-folder", text:  "My Project", route: "/projects" },
-        {icon: "mdi-account", text:  "Team", route: "/team" }
+        { icon: "mdi-home", text: "Dashboard", route: "/" },
+        { icon: "mdi-folder", text: "My Project", route: "/projects" },
+        { icon: "mdi-account", text: "Team", route: "/team" }
       ],
       menuItems: ["Profile", "Settings", "Logout"],
+    };
+  },
+  methods: {
+    showSnackbar() {
+      this.snackbar = true; // Show the snackbar
     }
   }
-}
+};
 </script>
