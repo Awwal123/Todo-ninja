@@ -10,7 +10,6 @@
         <span>Ninja</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-
       <v-menu>
         <template v-slot:activator="{ props }">
           <v-btn v-bind="props" flat color="grey">
@@ -18,7 +17,6 @@
             <span>Menu</span>
           </v-btn>
         </template>
-
         <v-list>
           <v-list-item
             v-for="link in links"
@@ -30,13 +28,11 @@
           </v-list-item>
         </v-list>
       </v-menu>
-
       <v-btn flat color="grey">
         <span>Sign Out</span>
         <v-icon right class="ml-2">mdi-exit-to-app</v-icon>
       </v-btn>
     </v-toolbar>
-
     <v-navigation-drawer app v-model="drawer" temporary color="primary">
       <div class="d-flex flex-column align-center mt-5">
         <v-avatar size="100">
@@ -47,7 +43,6 @@
           <Popup @project-added="showSnackbar" />
         </div>
       </div>
-
       <v-list>
         <v-list-item
           v-for="link in links"
@@ -62,7 +57,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
     <!-- Snackbar -->
     <v-snackbar v-model="snackbar" timeout="3000" color="green" location="top">
       <span class="text-white">Project has been added successfully</span>
